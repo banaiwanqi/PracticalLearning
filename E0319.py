@@ -92,7 +92,6 @@ def score_binning(df):
 #可视化
 #直方图 平均分可视化
 def class_mean_visual(df):
-    import matplotlib.pyplot as plt
     plt.figure(figsize=(10, 6))
     df_temp = df.sort_values('平均分', ascending=False).head(10)
     df_temp = df_temp.set_index('姓名')['平均分']
@@ -110,8 +109,6 @@ def class_mean_visual(df):
 
 #直方图 每学科的各个阶段人数
 def subject_visual(df):
-    import matplotlib.pyplot as plt
-    import pandas as pd
     bins = [-1, 59, 69, 79, 89, 100]  # 关键修复
     labels = ['不及格', '合格', '中等', '良好', '优秀']
     subjects = df.columns[2:18].tolist()
