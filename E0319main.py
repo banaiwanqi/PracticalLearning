@@ -14,8 +14,6 @@ print('======== 欢迎使用 ========')
 print('===== 学生成绩管理系统 =====')
 
 #清洗
-#df = drop_nan(df)
-df = to_numeric(df)
 df = filter_data(df)
 df = base_df(df)
 df = overall_analysis(df)

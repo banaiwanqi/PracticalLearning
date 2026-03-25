@@ -2,7 +2,7 @@ import pandas as pd
 import pymysql
 from matplotlib import pyplot as plt, rcParams
 
-
+#连接数据库
 def get_db_connection(db_name):
     conn = pymysql.connect(host = 'localhost',
                            port = 3306,
@@ -12,23 +12,6 @@ def get_db_connection(db_name):
                             charset = 'utf8mb4'
                            )
     return conn
-#str
-def to_numeric(df):
-    for i in range(3,19):
-        try:
-            df.iloc[:, 1:20] = df.iloc[:, 1:20].apply(pd.to_numeric, errors='coerce')
-        except:
-            pass
-    return df
-
-#清洗空值
-def drop_nan(df):
-    try:
-        df = df.dropna(thresh=3)
-        df = df.dropna(thresh=4, axis=1)
-        return df
-    except Exception as e:
-        print('清洗空值出错了',e)
 
 #筛选数据
 def filter_data(df):
