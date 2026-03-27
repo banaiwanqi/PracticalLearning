@@ -9,7 +9,7 @@ def get_db_connection(db_name):
                            user = 'root',
                            password = 'soldierbar8',
                            database = db_name,
-                            charset = 'utf8mb4'
+                           charset = 'utf8mb4'
                            )
     return conn
 
