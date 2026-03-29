@@ -189,3 +189,15 @@ def plot_decade_trend(decade_trend):
     fig.legend(loc='upper left', bbox_to_anchor=(0.1, 0.9), fontsize=12)
     plt.tight_layout()
     plt.show()
+
+def top_movie(df):
+    top = df.sort_values(by = 'star',ascending=False)[['title','star']].head(20)
+    plt.barh(top['title'], top['star'],
+             color='#2E8B57')
+    plt.gca().invert_yaxis()
+    plt.grid(False)
+    plt.title('TOP10 电影榜单')
+    plt.yticks(top['title'])
+    for index, value in enumerate(top['star']):
+        plt.text(value + 0.05, index, f'{value}', va='center')
+    plt.show()
